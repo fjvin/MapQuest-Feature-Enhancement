@@ -27,8 +27,9 @@ def calculateDirection(orig, dest):
 
             for each in json_data["route"]["legs"][0]["maneuvers"]:
                 #print(f"{each['narrative']} ({each['distance']} km)")
-                directionList.append(f"{each['narrative']} ({each['distance']} km)")
+                #directionList.append(f"{each['narrative']} ({each['distance']} km)")
+                directionList.append((each['narrative'], each['distance']))
             
             return tripDuration, totalKm, directionList, json_status
     else:
-        return None, None, None, None, json_status
+        return None, None, None, json_status

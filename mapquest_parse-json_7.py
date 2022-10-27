@@ -2,7 +2,7 @@ import requests
 import urllib.parse
 
 main_api = "https://www.mapquestapi.com/directions/v2/route?"
-key = "p0Modq3JoAtVS6BXK5P5CinXWhJNUQwI"
+key = "zlXEVZAyYLrSid3duD5M93dLS9drqXc8"
 
 while True:
     orig = input("Starting Location: ")
@@ -29,7 +29,7 @@ while True:
         print(f"Directions from {orig} to {dest}")
         print(f"Trip Duration: {json_data['route']['formattedTime']}")
         print(f"Kilometers: {round(json_data['route']['distance']*1.61, 2)}")
-        print(f"Fuel Used (Ltr): {round(json_data['route']['fuelUsed']*3.78, 2)}")
+       #print(f"Fuel Used (Ltr): {round(json_data['route']['fuelUsed']*3.78, 2)}")
         print("="*30)
         for each in json_data["route"]["legs"][0]["maneuvers"]:
             print(f"{each['narrative']} ({each['distance']} km)")

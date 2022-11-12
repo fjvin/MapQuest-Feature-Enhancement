@@ -15,10 +15,10 @@ echo "COPY ./templates /home/myapp/templates/" >> tempdir/Dockerfile
 echo "COPY ./referenceFiles /home/myapp/referenceFiles/" >> tempdir/Dockerfile
 echo "COPY flask-web-app.py /home/myapp/" >> tempdir/Dockerfile
 echo "COPY mapquestBackend.py /home/myapp/" >> tempdir/Dockerfile
-echo "EXPOSE 8080" >> tempdir/Dockerfile
+echo "EXPOSE 5050" >> tempdir/Dockerfile
 echo "CMD python3 /home/myapp/flask-web-app.py" >> tempdir/Dockerfile
 
 cd tempdir
 docker build -t mapquestapp .
-docker run -t -d -p 8080:8080 --name mapquestapprunning mapquestapp
+docker run -t -d -p 5050:5050 --name mapquestapprunning mapquestapp
 docker ps -a

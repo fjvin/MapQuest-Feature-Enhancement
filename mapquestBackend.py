@@ -28,15 +28,23 @@ def calculateDirection(orig, dest, distanceUnitId):
             tripDuration = json_data['route']['formattedTime']
 
             distanceUnit = distanceUnits[distanceUnitId]
+
             distance = json_data['route']['distance']
 
             if distanceUnit == 'km':
-                distance = round(distance*1.61, 2) # convert data to km
+                distance = convertMilestoKm(distance) # convert data to km
             
             for each in json_data["route"]["legs"][0]["maneuvers"]:
                 #print(f"{each['narrative']} ({each['distance']} km)")
+
+                if distanceUnit == 'km':
+                    each['distance'] = convertMilestoKm(each['distance'])
+                
                 directionList.append((each['narrative'], each['distance'], distanceUnit))
             
             return tripDuration, distance, distanceUnit, directionList, json_status
     else:
         return None, None, None, None, json_status
+
+def convertMilestoKm(miles):
+    return round(miles * 1.61, 2)

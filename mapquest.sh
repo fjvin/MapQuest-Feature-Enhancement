@@ -2,11 +2,13 @@
 
 mkdir tempdir
 mkdir tempdir/templates
+mkdir tempdir/static
 mkdir tempdir/referenceFiles
 
 cp flask-web-app.py tempdir/.
 cp mapquestBackend.py tempdir/.
 cp -r templates/* tempdir/templates/.
+cp -r static/* tempdir/static/.
 cp -r referenceFiles/* tempdir/referenceFiles/.
 
 echo "FROM python" >> tempdir/Dockerfile

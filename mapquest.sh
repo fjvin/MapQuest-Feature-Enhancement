@@ -23,7 +23,7 @@ echo "COPY  mapquestBackend.py /home/myapp/" >> tempdir/Dockerfile
 echo "COPY  testMapquest.py /home/myapp/" >> tempdir/Dockerfile
 
 echo "EXPOSE 5050" >> tempdir/Dockerfile
-echo "CMD python3 /home/myapp/flask-web-app.py" >> tempdir/Dockerfile
+echo "CMD python3 /home/myapp/flaskWebApp.py" >> tempdir/Dockerfile
 
 cd tempdir
 docker build -t mapquestapp --no-cache .

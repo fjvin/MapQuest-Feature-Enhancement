@@ -12,10 +12,12 @@ app.secret_key = "wsjlhfgsehjdfgsjadhfgjsakdhfg" # Flask API secret key
 @app.route("/", methods=["POST", "GET"]) # Default route with POST and GET methods
 def main():
     if request.method == "POST": # If request is POST method
-        orig = request.form['start'] # Retrieve the starting location input from the HTML form
-        dest = request.form['dest'] # Retrieve the destination input from the HTML form
+        orig = request.form['startingState'] + ','  + request.form['startingCountry'] # Retrieve the starting location input from the HTML form
+        dest = request.form['destinationState'] + ',' + request.form['destinationCountry'] # Retrieve the destination input from the HTML form
         distanceUnitId = int(request.form['distanceUnit']) # Retrieve the distance unit input from the HTML form
         
+        print((orig, dest, distanceUnitId))
+
         # Calls the helper function to return the tripDuration, distance, distanceUnit, directionList, and json_status
         # Requires three (3) parameters: Starting Location, Destination, and Distance Unit ID
         tripDuration, distance, distanceUnit, directionList, json_status = calculateDirection(orig, dest, distanceUnitId)

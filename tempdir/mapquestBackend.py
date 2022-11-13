@@ -67,4 +67,4 @@ def calculateDirection(orig, dest, distanceUnitId):
 
 # Helper function that converts miles to km
 def convertMilestoKm(miles):
-    return round(miles*1.61, 2)
+    return round(miles*1.609344, 2)

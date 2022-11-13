@@ -3,11 +3,11 @@ from flaskWebApp import app
 from mapquestBackend import calculateDirection, convertMilestoKm
 
 testCasesInputs = {
-    ("Quezon City, Philippines", "Taguig City, Philippines", 1) : 0,
-    ("Washington, DC", "Baltimore Md", 1) : 0,
+    ("Quezon City,Philippines", "Taguig City,Philippines", 1) : 0,
+    ("Washington,DC", "Baltimore Md", 1) : 0,
     ("Wash", "Bal", 1) : 402,
-    ("Washington, DC", "Bal", 1) : 402,
-    ("Washington, DC", "", 1) : 611,
+    ("Washington,DC", "Bal", 1) : 402,
+    ("Washington,DC", "", 1) : 611,
     ("", "", 1) : 611,
 }
 
@@ -39,8 +39,10 @@ class TestMapquest(unittest.TestCase):
     # Tests the Post Method if returns HTTP - 200 (Success Status)
     def testPostMethod(self):
         response = self.app.post("/", data={
-            "start":"Quezon City, Philippines",
-            "dest":"Taguig City, Philippines",
+            "startingCountry":"Philippines",
+            "startingState":"Manila",
+            "destinationCountry":"Philippines",
+            "destinationState":"Quezon City",
             "distanceUnit":1
         })
         statusCode = response.status_code

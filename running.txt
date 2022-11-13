@@ -1,3 +1,6 @@
 CONTAINER ID   IMAGE         COMMAND                  CREATED          STATUS                      PORTS                                       NAMES
 5e5eed0d7e14   mapquestapp   "/bin/sh -c 'python3…"   21 seconds ago   Exited (1) 15 seconds ago                                               mapquestapprunning
 ff80f8366962   sampleapp     "/bin/sh -c 'python …"   3 weeks ago      Exited (255) 2 weeks ago    0.0.0.0:5050->5050/tcp, :::5050->5050/tcp   samplerunning
+CONTAINER ID   IMAGE         COMMAND                  CREATED          STATUS                      PORTS     NAMES
+47b678eb640d   mapquestapp   "/bin/sh -c 'python3…"   38 seconds ago   Exited (1) 37 seconds ago             mapquestapprunning
+23382dce3c7d   sampleapp     "/bin/sh -c 'python …"   3 weeks ago      Exited (137) 3 weeks ago              samplerunning

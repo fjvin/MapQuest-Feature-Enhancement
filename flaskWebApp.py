@@ -16,7 +16,7 @@ def main():
         dest = request.form['destinationState'] + ',' + request.form['destinationCountry'] # Retrieve the destination input from the HTML form
         distanceUnitId = int(request.form['distanceUnit']) # Retrieve the distance unit input from the HTML form
         
-        print((orig, dest, distanceUnitId))
+        # print((orig, dest, distanceUnitId))
 
         # Calls the helper function to return the tripDuration, distance, distanceUnit, directionList, and json_status
         # Requires three (3) parameters: Starting Location, Destination, and Distance Unit ID
